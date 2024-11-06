@@ -25,4 +25,10 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function show()
+    {
+        $imagePath = asset('images/profile.jpg');
+        return view('home', compact('imagePath'));
+    }
 }
