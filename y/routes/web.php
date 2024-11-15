@@ -25,6 +25,8 @@ Route::get('/example', function () {
     return view('example');
 });
 
+//pagina del profilo
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
