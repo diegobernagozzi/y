@@ -47,6 +47,10 @@ import MainLayout from './layouts/MainLayout.vue';
             imagePath: {
                 type: String,
                 required: true
+            },
+            users: {
+                type: Array,
+                required: true
             }
         },
         mounted() {

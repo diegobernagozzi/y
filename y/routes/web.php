@@ -14,10 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $imagePath = asset('/images/sawyer.jpeg');
-    return view('home', ['imagePath' => $imagePath]);
-});
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
@@ -26,7 +24,7 @@ Route::get('/example', function () {
 });
 
 //pagina del profilo
-Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
+Route::get('/profile/{id}', [App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
 
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -28,4 +28,9 @@
         </div>
     </div>
 </body>
+
+<script>
+    window.users = @json($randomUsers);
+</script>
+
 </html>

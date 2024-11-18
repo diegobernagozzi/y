@@ -1,17 +1,17 @@
 <template>
-    <MainLayout :image-path="imagePath">
+    <MainLayout :users="users">
         <div class="d-flex">
-            <button type="button" onclick="alert('in sviluppo');" class="mx-2 my-2 pe-4 btn bg-transparent">
+            <a href="/" type="button" class="mx-2 my-2 pe-4 btn bg-transparent">
                 <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            </button>
+            </a>
             <div>
-                <h6 class="fw-bold m-0">Diego Bernagozzi</h6>
+                <h6 class="fw-bold m-0">{{ user.name }}</h6>
                 <p class="text-muted" style="font-size: 12px;">18 posts</p>
             </div>
         </div>
         <div class="position-relative" style="width:755px; height: 200px; background-color: aquamarine;">
-            <!-- <img :src="imagePath" style="width: 755px; height: 200px;"> -->
-            <img :src="imagePath" class="rounded-circle img-thumbnail start-0 mx-4 position-absolute"
+            <img :src="user.background_image" style="width: 755px; height: 200px;" class="object-fit-content"> 
+            <img :src="user.profile_image" class="rounded-circle img-thumbnail start-0 mx-4 position-absolute"
                 style="width: 133px; height: 133px; bottom: -65px;" />
         </div>
         <div class="position-relative">
@@ -23,9 +23,9 @@
         </div>
 
         <div class="position-relative mx-3 mt-5" style="top: 25px;">
-            <h3 class="fw-bold">Diego Bernagozzi</h3>
+            <h3 class="fw-bold">{{ user.name }}</h3>
             <div class="fs-6 text-muted">
-                @diegobernagozzi
+                @{{ user.user_name }}
             </div>
         </div>
 
@@ -93,8 +93,8 @@ import MainLayout from './layouts/MainLayout.vue';
 
 export default {
     props: {
-        imagePath: {
-            type: String,
+        user: {
+            type: Object,
             required: true
         }
     },

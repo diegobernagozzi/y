@@ -12,31 +12,13 @@
         </div>
         <div>
             <ul class="list-unstyled">
-                <li class="mx-2 my-2">
+                <li v-for="user in users" :key="user.id" class="mx-2 my-2">
                     <div class="d-flex align-items-center">
-                        <img :src="imagePath" class="rounded-circle mx-2 my-2" style="width: 40px; height: 40px;">
-                        <div class="mt-3">
-                            <h6>Diego Bernagozzi</h6>
-                            <p style="font-size: 12px;">@diegobernagozzi</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="mx-2 my-2">
-                    <div class="d-flex align-items-center">
-                        <img :src="imagePath" class="rounded-circle mx-2 my-2" style="width: 40px; height: 40px;">
-                        <div class="mt-3">
-                            <h6>Diego Bernagozzi</h6>
-                            <p style="font-size: 12px;">@diegobernagozzi</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="mx-2 my-2">
-                    <div class="d-flex align-items-center">
-                        <img :src="imagePath" class="rounded-circle mx-2 my-2" style="width: 40px; height: 40px;">
-                        <div class="mt-3">
-                            <h6>Diego Bernagozzi</h6>
-                            <p style="font-size: 12px;">@diegobernagozzi</p>
-                        </div>
+                        <img :src="user.profile_image" class="rounded-circle mx-2 my-2" style="width: 40px; height: 40px;">
+                        <a :href="`/profile/${user.id}`" class="mt-3 link-underline-light" style="color: black;">
+                            <h6>{{ user.name }}</h6>
+                            <p style="font-size: 12px;">@{{  user.user_name }}</p>
+                        </a>
                     </div>
                 </li>
             </ul>
@@ -48,8 +30,8 @@
 export default {
     name: 'RightSidebar',
     props: {
-        imagePath: {
-            type: String,
+        users: {
+            type: Array,
             required: true
         }
     },

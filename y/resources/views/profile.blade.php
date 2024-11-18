@@ -3,7 +3,7 @@
 @section('content')
 
 
-<profile-component :image-path="'{{$imagePath}}'">
+<profile-component :user="{{ $user->toJson() }}">
     
 </profile-component>
 

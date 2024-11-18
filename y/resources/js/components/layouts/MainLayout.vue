@@ -8,7 +8,7 @@
                 <slot></slot>
             </div>
             <div class="col-3">
-                <RightSidebar :image-path="imagePath"></RightSidebar>
+                <RightSidebar :users="users"></RightSidebar>
             </div>
         </div>
     </div>
@@ -20,15 +20,14 @@ import RightSidebar from './RightSidebar.vue';
 
 export default {
     name: 'MainLayout',
-    props: {
-        imagePath: {
-            type: String,
-            required: true
-        }
-    },
     components: {
         LeftSidebar,
         RightSidebar
+    },
+    data() {
+        return {
+            users: window.users || []
+        };
     }
 }
 </script>
