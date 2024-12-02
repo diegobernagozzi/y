@@ -30,58 +30,22 @@
         </div>
 
         <div class="mt-5 mx-3">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                anim id est laborum.</p>
+            <p>{{ user.description }}</p>
         </div>
 
-        <div class="mx-3">
+        <div class="mx-3 my-2">
             <span class="me-2 fw-bold">10 following</span>
             <span class="fw-bold">10 followers</span>
         </div>
 
         <div class="">
-            <div class="border my-1">
+            <div v-for="post in posts" v-key="post.id" class="border my-1">
                 <div class="d-flex align-items-center">
-                    <img :src="imagePath" class="rounded-circle mx-3 my-3" style="width: 30px; height: 30px;">
-                    <h6 class="mx-3 my-3">Diego Bernagozzi</h6>
+                    <img :src="user.profile_image" class="rounded-circle mx-3 my-3" style="width: 30px; height: 30px;">
+                    <h6 class="mx-3 my-3">{{ user.name }}</h6>
                 </div>
                 <div class="mx-3">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
-
-            <div class="border my-1">
-                <div class="d-flex align-items-center">
-                    <img :src="imagePath" class="rounded-circle mx-3 my-3" style="width: 30px; height: 30px;">
-                    <h6 class="mx-3 my-3">Diego Bernagozzi</h6>
-                </div>
-                <div class="mx-3">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
-
-            <div class="border my-1">
-                <div class="d-flex align-items-center">
-                    <img :src="imagePath" class="rounded-circle mx-3 my-3" style="width: 30px; height: 30px;">
-                    <h6 class="mx-3 my-3">Diego Bernagozzi</h6>
-                </div>
-                <div class="mx-3">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>{{ post.body }}</p>
                 </div>
             </div>
         </div>
@@ -95,6 +59,10 @@ export default {
     props: {
         user: {
             type: Object,
+            required: true
+        },
+        posts: {
+            type: Array,
             required: true
         }
     },

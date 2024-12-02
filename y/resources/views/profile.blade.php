@@ -3,7 +3,7 @@
 @section('content')
 
 
-<profile-component :user="{{ $user->toJson() }}">
+<profile-component :user="{{ $user->toJson() }}" :posts="{{ $posts->toJson() }}">
     
 </profile-component>
 

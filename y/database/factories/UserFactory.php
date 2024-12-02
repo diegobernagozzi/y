@@ -26,6 +26,7 @@ class UserFactory extends Factory
             'profile_image' => $this->faker->imageUrl(150, 150, 'people'), // URL immagine casuale
             'background_image' => $this->faker->imageUrl(150, 150, 'people'), // URL immagine casuale
             'user_name' => $this->faker->unique()->userName(), 
+            'description' => fake()->paragraph(2),
         ];
     }
 
