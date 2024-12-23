@@ -22,11 +22,19 @@
 <body>
     <div id="app">
         <div id="vue-app">
-            <main class="py-4">
+            <main class="">
                 @yield('content')
             </main>
         </div>
     </div>
+
+    @if(session()->has('success'))
+        <div class="position-fixed bottom-0 end-0 px-4 bg-primary rounded-5 text-light mx-2 my-2">
+            <p class="my-3">{{ session('success') }}</p>
+        </div>
+    @endif
+
+    @include('auth.logout');
 </body>
 
 <script>

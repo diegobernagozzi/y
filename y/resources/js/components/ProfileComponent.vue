@@ -1,6 +1,6 @@
 <template>
-    <MainLayout :users="users">
-        <div class="d-flex">
+    <MainLayout :users="users" :user="user" :is-logged-in="isLoggedIn">
+        <div class="d-flex my-3">
             <a href="/" type="button" class="mx-2 my-2 pe-4 btn bg-transparent">
                 <i class="fa fa-arrow-left" aria-hidden="true"></i>
             </a>
@@ -64,6 +64,10 @@ export default {
         posts: {
             type: Array,
             required: true
+        },
+        isLoggedIn: {
+            type: Boolean,
+            default: null
         }
     },
     components: { MainLayout }

@@ -25,7 +25,9 @@ class HomeController extends Controller
     {
         $randomUsers = User::inRandomOrder()->limit(3)->get();
         $imagePath = asset('/images/sawyer.jpeg');
-        return view('home', ['randomUsers' => $randomUsers, 'imagePath' => $imagePath]);
+        $isLoggedIn = auth()->check();
+        $user = auth()->user();
+        return view('home', ['randomUsers' => $randomUsers, 'imagePath' => $imagePath, 'isLoggedIn' => $isLoggedIn, 'user' => $user]);
     }
 
     public function show()

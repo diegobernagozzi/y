@@ -26,6 +26,17 @@ Route::get('/example', function () {
 //pagina del profilo
 Route::get('/profile/{id}', [App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
 
+//registrazione nuovo utente
+Route::get('register', [App\Http\Controllers\RegisterController::class, 'create'])->middleware('guest');
+Route::post('register', [App\Http\Controllers\RegisterController::class, 'store'])->middleware('guest');
+
+Route::get('login', [App\Http\Controllers\SessionController::class, 'create'])->middleware('guest');
+Route::post('login', [App\Http\Controllers\SessionController::class, 'store'])->middleware('guest');
+Route::post('logout', [App\Http\Controllers\SessionController::class, 'destroy'])->middleware('auth');
+
+//login
+
+
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

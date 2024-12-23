@@ -1,6 +1,6 @@
 <template>
 
-    <div class="mx-2">
+    <div class="mx-2 my-3">
         <div class=" d-flex flex-grow-1">
             <input id="searchBar" class="rounded-pill border-0 px-2 py-2 flex-grow-1" type="text" placeholder="Ricerca..."/>
         </div>

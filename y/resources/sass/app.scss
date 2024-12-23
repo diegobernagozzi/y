@@ -8,3 +8,16 @@
 @import 'bootstrap/scss/bootstrap';
 
 @import 'font-awesome/css/font-awesome';
+
+
+// body {
+//     max-height: auto;
+//     overflow: hidden;
+//   }
+  
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: auto;
+}

@@ -20,7 +20,8 @@ class ProfileController extends Controller
     {
         $user = User::find($id);
         $posts = Post::where('user_id', $id)->get();
+        $isLoggedIn = auth()->check();
 
-        return view('profile', ['user' => $user, 'posts' => $posts]);
+        return view('profile', ['user' => $user, 'posts' => $posts, 'isLoggedIn' => $isLoggedIn]);
     }
 }

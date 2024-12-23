@@ -2,7 +2,7 @@
     <div class="container">
         <div class="d-flex">
             <div class="col-2">
-                <LeftSidebar></LeftSidebar>
+                <LeftSidebar :is-logged-in="isLoggedIn" :user="user"></LeftSidebar>
             </div>
             <div class="col-7 border-end border-start">
                 <slot></slot>
@@ -23,6 +23,16 @@ export default {
     components: {
         LeftSidebar,
         RightSidebar
+    },
+    props: {
+        isLoggedIn: {
+            type: Boolean,
+            required: true
+        },
+        user: {
+            type: Object,
+            default: null
+        }
     },
     data() {
         return {
