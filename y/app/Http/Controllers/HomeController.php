@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Post;
+
 class HomeController extends Controller
 {
     /**
@@ -27,6 +29,8 @@ class HomeController extends Controller
         $imagePath = asset('/images/sawyer.jpeg');
         $isLoggedIn = auth()->check();
         $user = auth()->user();
+
+
         return view('home', ['randomUsers' => $randomUsers, 'imagePath' => $imagePath, 'isLoggedIn' => $isLoggedIn, 'user' => $user]);
     }
 

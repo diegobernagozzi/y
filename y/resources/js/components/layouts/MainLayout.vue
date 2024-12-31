@@ -2,7 +2,7 @@
     <div class="container">
         <div class="d-flex">
             <div class="col-2">
-                <LeftSidebar :is-logged-in="isLoggedIn" :user="user"></LeftSidebar>
+                <LeftSidebar :is-logged-in="isLoggedIn" :user="user" :posts="posts"></LeftSidebar>
             </div>
             <div class="col-7 border-end border-start">
                 <slot></slot>
@@ -32,6 +32,10 @@ export default {
         user: {
             type: Object,
             default: null
+        },
+        posts: {
+            type: Array,
+            required: true
         }
     },
     data() {
